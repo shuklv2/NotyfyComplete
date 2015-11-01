@@ -48,7 +48,7 @@ def append(request):
     return HttpResponse(message)
 
 def broadcast(request):
-
+    
     
     ACCOUNT_SID = "ACfa54a756a82c32aa2d643e6f72fd14c5" 
     AUTH_TOKEN = "985442a038ab0c3757277de82142962f" 
@@ -64,9 +64,9 @@ def broadcast(request):
 
 
 
-   # message=''
-    #if 'city2' in request.GET and 'message' in request.GET:
-    #    message = 'Sending text to the city of %s saying %s' % (request.GET['city2'], request.GET['message'])
-    #return HttpResponse(message)
+    message=''
+    if 'city2' in request.GET and 'message' in request.GET:
+        message = 'Sending text to the city of %s saying %s' % (request.GET['city2'], request.GET['message'])
+    return HttpResponse(message)
 
 

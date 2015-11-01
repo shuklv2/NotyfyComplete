@@ -53,8 +53,8 @@ def append(request):
     return render('app/append.html',
                     context_instance = RequestContext(request,
                         {
-                            'thanks' : message2
-                            'message': message1         
+                            'thanks' : message2,
+                            'message' : message1,        
                    })
                 )
     #return HttpResponse(message)

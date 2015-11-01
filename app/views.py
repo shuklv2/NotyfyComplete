@@ -94,12 +94,12 @@ def broadcast(request):
 
 def cancel(request):
 
-    number = request.GET['number2']
+    #number = request.GET['number']
     message1 = "The entered number is not in our directory."
     message2 = "Please retry."
 
     for x in range (0, len(numberlist)):
-        if number == numberlist[x]:
+        if request.GET['number2'] == numberlist[x]:
             del numberlist[x]
             del citylist[x]
             message1 = "You have unsubscribed successfully."

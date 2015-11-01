@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^$', 'app.views.home', name='home'),
     url(r'^append/$','app.views.append',name='append'),
     url(r'^broadcast/$','app.views.broadcast',name='broadcast'),
+    url(r'^cancel/$','app.views.cancel',name='cancel'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

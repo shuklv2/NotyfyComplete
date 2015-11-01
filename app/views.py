@@ -92,4 +92,28 @@ def broadcast(request):
         })
     )
 
+def cancel(request):
+
+    number = request.GET['number2']
+    message1 = "The entered number is not in our directory."
+    message2 = "Please retry."
+
+    for x in range (0, len(numberlist)):
+        if number2 == numberlist[x]:
+            del numberlist[x]
+            del citylist[x]
+            message1 = "You have unsubscribed successfully."
+            message2 = "Thank you."
+             
+
+    return render(
+        request,
+        'app/append.html',
+        context_instance = RequestContext(request,
+            {
+                'attendee' : YOUR_INFO,
+                'thanks' : message2,
+                'message' : message1,        
+        })
+    )
 

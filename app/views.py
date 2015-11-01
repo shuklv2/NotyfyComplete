@@ -1,7 +1,7 @@
 ﻿"""
 Definition of views.
 """
-
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
@@ -27,3 +27,10 @@ def home(request):
                 'year': datetime.now().year,
             })
     )
+
+def append(request):
+    if 'number' in request.GET:
+        message = 'You entered %r' % request.GET['number']
+    else:
+        message = 'You entered nothing.'
+    return HttpResponse(message)

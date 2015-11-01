@@ -22,7 +22,7 @@ citylist=[]
 
 YOUR_INFO = {
     'name' : 'Notyfy',
-    'bio' : 'Community Inputted Alerts.',
+    'bio' : 'Community Driven Alerts.',
     'email' : '', # Leave blank if you'd prefer not to share your email with other conference attendees
     
     'headshot_url' : 'http://i.imgur.com/5L7ofip.png?1', # Link to your GitHub, Twitter, or Gravatar profile image.

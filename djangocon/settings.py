@@ -132,7 +132,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'django_twilio',
+    #'django_twilio',
     
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
@@ -140,8 +140,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 )
 
-TWILIO_ACCOUNT_SID = "ACfa54a756a82c32aa2d643e6f72fd14c5" 
-TWILIO_AUTH_TOKEN = "985442a038ab0c3757277de82142962f" 
+#TWILIO_ACCOUNT_SID = "ACfa54a756a82c32aa2d643e6f72fd14c5" 
+#TWILIO_AUTH_TOKEN = "985442a038ab0c3757277de82142962f" 
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

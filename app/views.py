@@ -63,7 +63,7 @@ def broadcast(request):
     location = request.GET['city2']
     location = location.lower()
 
-    for x in range (0 , len(citylist)+1)
+    for x in range (0 , len(citylist)+1):
         if citylist[x]==location:
             client.messages.create(to=numberlist[x], from_='+16103475940', body=text)
     

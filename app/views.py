@@ -53,7 +53,7 @@ def broadcast(request):
     #ACCOUNT_SID = "ACfa54a756a82c32aa2d643e6f72fd14c5" 
     #AUTH_TOKEN = "985442a038ab0c3757277de82142962f" 
      
-    client = twilio.rest.TwilioRestClient(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN) 
+    client = TwilioRestClient(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN) 
     
     text = request.GET['message']
     location = request.GET['city2']

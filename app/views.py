@@ -6,6 +6,8 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
+from twilio.rest import TwilioRestClient 
+
 
 YOUR_INFO = {
     'name' : 'Notyfy',
@@ -37,9 +39,24 @@ def append(request):
     return HttpResponse(message)
 
 def broadcast(request):
-    message=''
-    if 'city2' in request.GET and 'message' in request.GET:
-        message = 'Sending text to %s saying %s' % (request.GET['city2'], request.GET['message'])
-    return HttpResponse(message)
+
+    ACCOUNT_SID = "ACfa54a756a82c32aa2d643e6f72fd14c5" 
+    AUTH_TOKEN = "985442a038ab0c3757277de82142962f" 
+     
+    client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
+    
+    text = request.GET['message']
+    location = request.GET['city2']
+    location.lower()
+    
+    client.messages.create(to=location, from_='+16103475940', body=text)
+        
+
+
+
+   # message=''
+    #if 'city2' in request.GET and 'message' in request.GET:
+    #    message = 'Sending text to the city of %s saying %s' % (request.GET['city2'], request.GET['message'])
+    #return HttpResponse(message)
 
 

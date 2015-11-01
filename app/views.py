@@ -55,11 +55,12 @@ def append(request):
         'app/append.html',
         context_instance = RequestContext(request,
             {
+                'attendee' : YOUR_INFO,
                 'thanks' : message2,
                 'message' : message1,        
         })
     )
-    #return HttpResponse(message)
+    
 
 def broadcast(request):
     
@@ -78,10 +79,18 @@ def broadcast(request):
             client.messages.create(to=numberlist[x], from_='+16103475940', body=text)
     
 
-
-    message=''
     if 'city2' in request.GET and 'message' in request.GET:
-        message = 'Sending text to the city of %s saying %s' % (request.GET['city2'], request.GET['message'])
-    return HttpResponse(message)
+        message1 = 'Sending text to the city of %s saying %s' % (request.GET['city2'], request.GET['message'])
+        message2 = 'You have not failed this city.'
+    return render(
+        request,
+        'app/append.html',
+        context_instance = RequestContext(request,
+            {
+                'attendee' : YOUR_INFO,
+                'thanks' : message2,
+                'message' : message1,        
+        })
+    )
 
 

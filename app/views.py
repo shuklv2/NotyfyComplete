@@ -50,13 +50,15 @@ def append(request):
         citylist.append(request.GET['city'].lower())
     else:
         message = 'You entered nothing.'
-    return render('app/append.html',
-                    context_instance = RequestContext(request,
-                        {
-                            'thanks' : message2,
-                            'message' : message1,        
-                   })
-                )
+    return render(
+        request,
+        'app/append.html',
+        context_instance = RequestContext(request,
+            {
+                'thanks' : message2,
+                'message' : message1,        
+        })
+    )
     #return HttpResponse(message)
 
 def broadcast(request):

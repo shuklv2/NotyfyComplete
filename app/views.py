@@ -32,7 +32,7 @@ def append(request):
     message=''
     if 'number' in request.GET and 'city' in request.GET:
         message = 'You entered %s and %s' % (request.GET['number'], request.GET['city'])
-    else if request.GET['number']=='' or request.GET['city']=='':
+    else:
         message = 'You entered nothing.'
     return HttpResponse(message)
 

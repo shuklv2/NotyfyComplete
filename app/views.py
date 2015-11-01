@@ -17,6 +17,8 @@ from twilio.rest import TwilioRestClient
 
 #from django_twilio.client import twilio_client
 
+numberlist=[]
+citylist=[]
 
 YOUR_INFO = {
     'name' : 'Notyfy',
@@ -43,6 +45,8 @@ def append(request):
     message=''
     if 'number' in request.GET and 'city' in request.GET:
         message = 'You entered %s and %s' % (request.GET['number'], request.GET['city'])
+        numberlist.append(request.GET['number'])
+        citylist.append(request.GET['city'].lower())
     else:
         message = 'You entered nothing.'
     return HttpResponse(message)
@@ -54,14 +58,15 @@ def broadcast(request):
     AUTH_TOKEN = "985442a038ab0c3757277de82142962f" 
      
     client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
-    
+
     text = request.GET['message']
     location = request.GET['city2']
-    location.lower()
-    
-    client.messages.create(to=location, from_='+16103475940', body=text)
-        
+    location = location.lower()
 
+    for x in range (0 , len(citylist)+1)
+        if citylist[x]==location:
+            client.messages.create(to=numberlist[x], from_='+16103475940', body=text)
+    
 
 
     message=''

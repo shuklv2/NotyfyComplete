@@ -99,7 +99,7 @@ def cancel(request):
     message2 = "Please retry."
 
     for x in range (0, len(numberlist)):
-        if number2 == numberlist[x]:
+        if number == numberlist[x]:
             del numberlist[x]
             del citylist[x]
             message1 = "You have unsubscribed successfully."

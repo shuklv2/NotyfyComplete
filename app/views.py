@@ -44,12 +44,20 @@ def home(request):
 def append(request):
     message=''
     if 'number' in request.GET and 'city' in request.GET:
-        message = 'You entered %s and %s' % (request.GET['number'], request.GET['city'])
+        message1 = 'You entered %s and %s' % (request.GET['number'], request.GET['city'])
+        message2 = 'You have not failed your city.'
         numberlist.append(request.GET['number'])
         citylist.append(request.GET['city'].lower())
     else:
         message = 'You entered nothing.'
-    return HttpResponse(message)
+    return render('app/append.html',
+                    context_instance = RequestContext(request,
+                        {
+                            'thanks' : message2
+                            'message': message1         
+                   })
+                )
+    #return HttpResponse(message)
 
 def broadcast(request):
     

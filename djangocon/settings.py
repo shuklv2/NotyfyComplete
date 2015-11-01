@@ -4,8 +4,7 @@ Django settings for djangocon project.
 
 from os import path
 
-TWILIO_ACCOUNT_SID = "ACfa54a756a82c32aa2d643e6f72fd14c5" 
-TWILIO_AUTH_TOKEN = "985442a038ab0c3757277de82142962f" 
+
 
 PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
 
@@ -134,11 +133,15 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'app',
     'django_twilio',
+    
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+TWILIO_ACCOUNT_SID = "ACfa54a756a82c32aa2d643e6f72fd14c5" 
+TWILIO_AUTH_TOKEN = "985442a038ab0c3757277de82142962f" 
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

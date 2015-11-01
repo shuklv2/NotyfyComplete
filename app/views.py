@@ -6,8 +6,16 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
-#from twilio.rest import TwilioRestClient 
-from django_twilio.client import twilio_client
+from twilio.rest import TwilioRestClient 
+from django_twilio.utils import discover_twilio_credentials
+
+from django.contrib.auth.models import User
+
+ACCOUNT_SID = "ACfa54a756a82c32aa2d643e6f72fd14c5" 
+AUTH_TOKEN = "985442a038ab0c3757277de82142962f" 
+     
+client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
+#from django_twilio.client import twilio_client
 
 
 YOUR_INFO = {
@@ -41,10 +49,7 @@ def append(request):
 
 def broadcast(request):
 
-    ACCOUNT_SID = "ACfa54a756a82c32aa2d643e6f72fd14c5" 
-    AUTH_TOKEN = "985442a038ab0c3757277de82142962f" 
-     
-    client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
+    
     
     text = request.GET['message']
     location = request.GET['city2']

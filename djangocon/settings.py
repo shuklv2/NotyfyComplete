@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'django_twilio',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -166,6 +167,9 @@ LOGGING = {
 
 # Specify the default test runner.
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+TWILIO_ACCOUNT_SID = "ACfa54a756a82c32aa2d643e6f72fd14c5" 
+TWILIO_AUTH_TOKEN = "985442a038ab0c3757277de82142962f" 
 
 # Import the local settings for the current machine
 try:

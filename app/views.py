@@ -25,7 +25,7 @@ def home(request):
             {
                 'attendee' : YOUR_INFO,    
                 'year': datetime.now().year,
-        
+        })
     )
 
 def append(request):

@@ -6,7 +6,8 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
-from twilio.rest import TwilioRestClient 
+#from twilio.rest import TwilioRestClient 
+from django_twilio.client import twilio_client
 
 
 YOUR_INFO = {

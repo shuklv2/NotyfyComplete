@@ -98,7 +98,7 @@ def cancel(request):
     message1 = "The entered number is not in our directory."
     message2 = "Please retry."
 
-    for x in range (0, len(numberlist));
+    for x in range (0, len(numberlist)):
         if number == numberlist[x]:
             del numberlist[x]
             del citylist[x]

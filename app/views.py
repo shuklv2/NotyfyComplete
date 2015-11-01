@@ -22,11 +22,10 @@ citylist=[]
 
 YOUR_INFO = {
     'name' : 'Notyfy',
-    'bio' : 'Community Inputed Alerts.',
+    'bio' : 'Community Inputted Alerts.',
     'email' : '', # Leave blank if you'd prefer not to share your email with other conference attendees
-    'twitter_username' : 'Notyfy', # No @ symbol, just the handle.
-    'github_username' : "Notyfy", 
-    'headshot_url' : '', # Link to your GitHub, Twitter, or Gravatar profile image.
+    
+    'headshot_url' : 'http://i.imgur.com/5L7ofip.png?1', # Link to your GitHub, Twitter, or Gravatar profile image.
 }
     
 def home(request):
@@ -44,8 +43,8 @@ def home(request):
 def append(request):
     message=''
     if 'number' in request.GET and 'city' in request.GET:
-        message1 = 'You entered %s and %s' % (request.GET['number'], request.GET['city'])
-        message2 = 'You have not failed your city.'
+        message1 = 'The number %s has been added to get alerts from the city of %s' % (request.GET['number'], request.GET['city'])
+        message2 = 'You can unsubscribe from this service at anytime.'
         numberlist.append(request.GET['number'])
         citylist.append(request.GET['city'].lower())
     else:
@@ -80,8 +79,8 @@ def broadcast(request):
     
 
     if 'city2' in request.GET and 'message' in request.GET:
-        message1 = 'Sending text to the city of %s saying %s' % (request.GET['city2'], request.GET['message'])
-        message2 = 'You have not failed this city.'
+        message1 = "Thank you for keeping your city safe."
+        message2 = 'Your alert has been sent.'
     return render(
         request,
         'app/append.html',

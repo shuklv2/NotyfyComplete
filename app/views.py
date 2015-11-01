@@ -25,16 +25,21 @@ def home(request):
             {
                 'attendee' : YOUR_INFO,    
                 'year': datetime.now().year,
-            })
+        
     )
 
 def append(request):
+    message=''
     if 'number' in request.GET and 'city' in request.GET:
         message = 'You entered %s and %s' % (request.GET['number'], request.GET['city'])
-    else:
+    else if request.GET['number']=='' or request.GET['city']=='':
         message = 'You entered nothing.'
+    return HttpResponse(message)
 
-
+def broadcast(request):
+    message=''
+    if 'city2' in request.GET and 'message' in request.GET:
+        message = 'Sending text to %s saying %s' % (request.GET['city2'], request.GET['message'])
     return HttpResponse(message)
 
 

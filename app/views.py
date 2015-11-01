@@ -30,7 +30,7 @@ def home(request):
 
 def append(request):
     if 'number' in request.GET and 'city' in request.GET:
-        message = 'You entered %s and %s' % request.GET['number'] % request.GET['city']
+        message = 'You entered %s and %s' % (request.GET['number'], request.GET['city'])
     else:
         message = 'You entered nothing.'
 
